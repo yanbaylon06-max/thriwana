@@ -47,4 +47,4 @@ export default function Home() {
         <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', maxWidth: '800px', margin: '0 auto'}}>
           {/* Product 1 */}
           <div>
-            <div style={{width: '100%', aspectRatio: '3/4', backgroundColor: '#e0dbd4', display
+            <div style={{width: '100%', aspectRatio: '0.75', backgroundColor: '#e0dbd4', display
