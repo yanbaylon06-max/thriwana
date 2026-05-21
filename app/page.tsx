@@ -42,5 +42,5 @@ export default function Home() {
             <p style={{fontSize: '11px', letterSpacing: '3px', color: '#888', marginBottom: '6px'}}>01</p>
             <h3 style={{fontSize: '22px', fontWeight: '300', color: '#1a1a1a', fontFamily: 'var(--font-cormorant)', marginBottom: '4px'}}>Olive Geometric</h3>
             <p style={{color: '#aaa', fontSize: '12px', letterSpacing: '1px', marginBottom: '12px'}}>Hand-block printed · Limited batch</p>
-            <p style={{color: '#b8960c', fontSize: '18px', marginBottom: '16px', fontFamily: 'var(--font-cormorant)'}}>€85</p>
+            <p style={{color: '#b8960c', fontSize: '18px', marginBottom: '16px', fontFamily: 'var(--font-cormorant)'}}>EUR 85</p>
             <button style={{border: '1px solid #ccc', padding: '12px 24px', backgroundColor: 'transparent', fontSize: '11px', letterSpacing
