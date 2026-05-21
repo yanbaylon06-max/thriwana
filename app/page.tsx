@@ -1,86 +1,50 @@
 export default function Home() {
   return (
-    <main className="min-h-screen" style={{backgroundColor: '#f5f0eb', fontFamily: 'Georgia, serif'}}>
+    <main style={{minHeight: '100vh', backgroundColor: '#f7f4f0', fontFamily: 'var(--font-jost), sans-serif'}}>
+      
       {/* Nav */}
-      <nav style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 24px', backgroundColor: '#f5f0eb'}}>
-        <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-          <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
-            <polygon points="20,4 36,34 4,34" stroke="#b8960c" strokeWidth="2.5" fill="none"/>
-            <polygon points="20,12 30,30 10,30" stroke="#b8960c" strokeWidth="1.5" fill="none"/>
+      <nav style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '24px 40px', borderBottom: '1px solid #e8e2da'}}>
+        <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+            <polygon points="20,3 37,35 3,35" stroke="#b8960c" strokeWidth="2" fill="none"/>
+            <polygon points="20,11 30,31 10,31" stroke="#b8960c" strokeWidth="1.5" fill="none"/>
           </svg>
-          <span style={{fontSize: '15px', letterSpacing: '4px', color: '#2c2c2c'}}>THRIWANA</span>
+          <span style={{fontSize: '13px', letterSpacing: '5px', color: '#1a1a1a', fontWeight: '400'}}>THRIWANA</span>
         </div>
-        <button style={{fontSize: '22px', background: 'none', border: 'none', cursor: 'pointer'}}>☰</button>
+        <div style={{display: 'flex', gap: '32px', alignItems: 'center'}}>
+          <a href="#collection" style={{fontSize: '11px', letterSpacing: '3px', color: '#666', textDecoration: 'none'}}>COLLECTION</a>
+          <a href="#story" style={{fontSize: '11px', letterSpacing: '3px', color: '#666', textDecoration: 'none'}}>STORY</a>
+          <a href="#contact" style={{fontSize: '11px', letterSpacing: '3px', color: '#666', textDecoration: 'none'}}>CONTACT</a>
+        </div>
       </nav>
 
       {/* Hero */}
-      <section style={{padding: '60px 24px 40px', textAlign: 'center'}}>
-        <h1 style={{fontSize: '38px', fontWeight: '300', color: '#2c2c2c', lineHeight: '1.3', marginBottom: '16px'}}>
-          Handcrafted in Sri Lanka
+      <section style={{padding: '100px 40px 80px', textAlign: 'center', maxWidth: '800px', margin: '0 auto'}}>
+        <p style={{fontSize: '11px', letterSpacing: '4px', color: '#b8960c', marginBottom: '24px', fontFamily: 'var(--font-jost)'}}>SRI LANKA — LIMITED EDITION</p>
+        <h1 style={{fontSize: '64px', fontWeight: '300', color: '#1a1a1a', lineHeight: '1.1', marginBottom: '24px', fontFamily: 'var(--font-cormorant)'}}>
+          Handcrafted<br/>in Sri Lanka
         </h1>
-        <p style={{color: '#888', fontSize: '15px', marginBottom: '32px', letterSpacing: '1px'}}>
+        <p style={{color: '#888', fontSize: '14px', marginBottom: '48px', letterSpacing: '2px', fontFamily: 'var(--font-jost)'}}>
           Small batches · Local textiles · Women artisans
         </p>
-        <a href="#collection" style={{backgroundColor: '#2c2c2c', color: '#fff', padding: '14px 36px', textDecoration: 'none', fontSize: '13px', letterSpacing: '2px'}}>
+        <a href="#collection" style={{border: '1px solid #1a1a1a', color: '#1a1a1a', padding: '16px 48px', textDecoration: 'none', fontSize: '11px', letterSpacing: '3px', display: 'inline-block'}}>
           DISCOVER THE COLLECTION
         </a>
       </section>
 
       {/* Hero Image */}
-      <div style={{width: '100%', height: '420px', backgroundColor: '#d9d4ce', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-        <span style={{color: '#999', fontSize: '14px', letterSpacing: '2px'}}>PRODUCT PHOTO</span>
+      <div style={{width: '100%', height: '600px', backgroundColor: '#e8e2da', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+        <span style={{color: '#bbb', fontSize: '11px', letterSpacing: '4px'}}>CAMPAIGN IMAGE</span>
       </div>
 
       {/* Collection */}
-      <section id="collection" style={{padding: '64px 24px'}}>
-        <h2 style={{fontSize: '32px', fontWeight: '300', textAlign: 'center', color: '#2c2c2c', marginBottom: '8px'}}>The Collection</h2>
-        <p style={{textAlign: 'center', color: '#888', marginBottom: '48px', fontSize: '14px'}}>Limited batch. Locally crafted. Each piece unique.</p>
-        <div style={{maxWidth: '480px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '32px'}}>
-          {/* Product 1 */}
-          <div style={{backgroundColor: '#fff', padding: '16px'}}>
-            <div style={{width: '100%', height: '300px', backgroundColor: '#e8e4df', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px'}}>
-              <span style={{color: '#aaa', fontSize: '13px', letterSpacing: '2px'}}>PRODUCT PHOTO</span>
-            </div>
-            <h3 style={{fontWeight: '300', fontSize: '17px', color: '#2c2c2c', marginBottom: '4px'}}>Olive Geometric</h3>
-            <p style={{color: '#aaa', fontSize: '13px', marginBottom: '8px'}}>Hand-block printed · Limited batch</p>
-            <p style={{color: '#b8960c', fontSize: '16px', marginBottom: '12px'}}>€85</p>
-            <button style={{width: '100%', border: '1px solid #ccc', padding: '10px', backgroundColor: 'transparent', fontSize: '13px', letterSpacing: '1px', cursor: 'pointer'}}>
-              VIEW DETAILS
-            </button>
-          </div>
-          {/* Product 2 */}
-          <div style={{backgroundColor: '#fff', padding: '16px'}}>
-            <div style={{width: '100%', height: '300px', backgroundColor: '#e8e4df', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px'}}>
-              <span style={{color: '#aaa', fontSize: '13px', letterSpacing: '2px'}}>PRODUCT PHOTO</span>
-            </div>
-            <h3 style={{fontWeight: '300', fontSize: '17px', color: '#2c2c2c', marginBottom: '4px'}}>Rust Stripe</h3>
-            <p style={{color: '#aaa', fontSize: '13px', marginBottom: '8px'}}>Hand-block printed · Limited batch</p>
-            <p style={{color: '#b8960c', fontSize: '16px', marginBottom: '12px'}}>€85</p>
-            <button style={{width: '100%', border: '1px solid #ccc', padding: '10px', backgroundColor: 'transparent', fontSize: '13px', letterSpacing: '1px', cursor: 'pointer'}}>
-              VIEW DETAILS
-            </button>
-          </div>
+      <section id="collection" style={{padding: '100px 40px', maxWidth: '1100px', margin: '0 auto'}}>
+        <div style={{textAlign: 'center', marginBottom: '64px'}}>
+          <p style={{fontSize: '11px', letterSpacing: '4px', color: '#b8960c', marginBottom: '16px'}}>THE COLLECTION</p>
+          <h2 style={{fontSize: '48px', fontWeight: '300', color: '#1a1a1a', fontFamily: 'var(--font-cormorant)'}}>Current Season</h2>
+          <p style={{color: '#888', fontSize: '13px', letterSpacing: '1px', marginTop: '12px'}}>Limited batch. Locally crafted. Each piece unique.</p>
         </div>
-      </section>
-
-      {/* Story */}
-      <section style={{padding: '64px 24px', textAlign: 'center', backgroundColor: '#fff'}}>
-        <h2 style={{fontSize: '32px', fontWeight: '300', color: '#2c2c2c', marginBottom: '24px'}}>The Story</h2>
-        <p style={{color: '#888', marginBottom: '16px', lineHeight: '1.8', maxWidth: '480px', margin: '0 auto 16px'}}>
-          Born in a coastal town. Built on second chances, local craft, and patience.
-        </p>
-        <p style={{color: '#888', lineHeight: '1.8', maxWidth: '480px', margin: '0 auto 16px'}}>
-          Each piece is made in small batches using Sri Lankan textiles, working with family workshops and women artisans in the Arugam Bay area.
-        </p>
-        <p style={{color: '#aaa', fontStyle: 'italic', marginTop: '24px'}}>
-          We believe clothing should carry meaning — not just noise.
-        </p>
-      </section>
-
-      {/* Footer */}
-      <footer style={{padding: '32px 24px', textAlign: 'center', color: '#aaa', fontSize: '12px', letterSpacing: '1px'}}>
-        © 2025 THRIWANA. ALL RIGHTS RESERVED.
-      </footer>
-    </main>
-  );
-}
+        <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', maxWidth: '800px', margin: '0 auto'}}>
+          {/* Product 1 */}
+          <div>
+            <div style={{width: '100%', aspectRatio: '3/4', backgroundColor: '#e0dbd4', display
