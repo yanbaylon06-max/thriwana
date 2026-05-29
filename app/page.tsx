@@ -4,9 +4,10 @@ export default function Home() {
 
       <nav style={{position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, padding: '24px 48px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'rgba(245,240,232,0.95)'}}>
         <div style={{display: 'flex', alignItems: 'center', gap: '14px'}}>
-          <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+          <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
             <polygon points="20,2 38,36 2,36" stroke="#b8960c" strokeWidth="1.5" fill="none"/>
-            <polygon points="20,10 31,33 9,33" stroke="#b8960c" strokeWidth="1" fill="none"/>
+            <polygon points="20,9 33,34 7,34" stroke="#b8960c" strokeWidth="1.2" fill="none"/>
+            <polygon points="20,16 28,32 12,32" stroke="#b8960c" strokeWidth="1" fill="none"/>
           </svg>
           <span style={{fontSize: '13px', letterSpacing: '6px', color: '#2c2c2c'}}>THRIWANA</span>
         </div>
@@ -89,9 +90,10 @@ export default function Home() {
 
       <footer id="contact" style={{padding: '64px 48px', backgroundColor: '#1a1a1a', textAlign: 'center'}}>
         <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', marginBottom: '32px'}}>
-          <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
             <polygon points="20,2 38,36 2,36" stroke="#b8960c" strokeWidth="1.5" fill="none"/>
-            <polygon points="20,10 31,33 9,33" stroke="#b8960c" strokeWidth="1" fill="none"/>
+            <polygon points="20,9 33,34 7,34" stroke="#b8960c" strokeWidth="1.2" fill="none"/>
+            <polygon points="20,16 28,32 12,32" stroke="#b8960c" strokeWidth="1" fill="none"/>
           </svg>
           <span style={{fontSize: '13px', letterSpacing: '6px', color: '#f5f0e8'}}>THRIWANA</span>
         </div>
