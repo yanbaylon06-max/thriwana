@@ -23,15 +23,15 @@ export default function Home() {
         <div style={{position: 'relative', zIndex: 2, maxWidth: '700px', padding: '0 24px'}}>
           <p style={{fontSize: '11px', letterSpacing: '5px', color: '#b8960c', marginBottom: '24px'}}>ARUGAM BAY, SRI LANKA</p>
           <h1 style={{fontSize: '64px', fontWeight: '300', color: '#f5f0e8', lineHeight: '1.1', marginBottom: '24px'}}>Crafted in Sri Lanka.<br/>Worn Around The World.</h1>
-          <p style={{fontSize: '15px', color: '#d4cfc7', lineHeight: '1.8', marginBottom: '48px', fontStyle: 'italic'}}>Small-batch resort wear handcrafted by women artisans<br/>using premium natural fabrics.</p>
+          <p style={{fontSize: '15px', color: '#d4cfc7', lineHeight: '1.8', marginBottom: '48px', fontStyle: 'italic'}}>Small-batch resort wear handcrafted by women artisans using premium natural fabrics.</p>
           <a href="#collection" style={{backgroundColor: '#b8960c', color: '#f5f0e8', padding: '16px 48px', fontSize: '11px', letterSpacing: '4px', textDecoration: 'none', display: 'inline-block'}}>SHOP COLLECTION</a>
         </div>
       </section>
 
       <section id="story" style={{padding: '120px 48px', maxWidth: '900px', margin: '0 auto', textAlign: 'center'}}>
         <p style={{fontSize: '11px', letterSpacing: '5px', color: '#b8960c', marginBottom: '24px'}}>THE STORY</p>
-        <h2 style={{fontSize: '48px', fontWeight: '300', color: '#2c2c2c', lineHeight: '1.2', marginBottom: '40px'}}>Not Fast. Not Mass.<br/>Just Made Well.</h2>
-        <p style={{fontSize: '16px', color: '#666', lineHeight: '2', maxWidth: '600px', margin: '0 auto 24px'}}>Thriwana was born in the coastal workshops of Arugam Bay. Every shirt is cut, printed, and finished by hand - by women artisans who have spent years perfecting their craft.</p>
+        <h2 style={{fontSize: '48px', fontWeight: '300', color: '#2c2c2c', lineHeight: '1.2', marginBottom: '40px'}}>Not Fast. Not Mass. Just Made Well.</h2>
+        <p style={{fontSize: '16px', color: '#666', lineHeight: '2', maxWidth: '600px', margin: '0 auto 24px'}}>Thriwana was born in the coastal workshops of Arugam Bay. Every shirt is cut, printed, and finished by hand by women artisans who have spent years perfecting their craft.</p>
         <p style={{fontSize: '16px', color: '#666', lineHeight: '2', maxWidth: '600px', margin: '0 auto 24px'}}>We work in small batches. We use premium natural fabrics. We never compromise on finish. The result is a shirt that carries the warmth of Sri Lanka wherever you take it.</p>
         <p style={{fontSize: '18px', fontStyle: 'italic', color: '#b8960c', marginTop: '48px'}}>Craftsmanship first. Always.</p>
       </section>
@@ -43,22 +43,42 @@ export default function Home() {
           <p style={{fontSize: '13px', letterSpacing: '2px', color: '#888', marginTop: '12px'}}>SMALL BATCH - LIMITED PIECES</p>
         </div>
         <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '32px', maxWidth: '1000px', margin: '0 auto'}}>
-          {[
-            {name: 'The Arugam', desc: 'Black and white triangle block print. Woven from breathable cotton. Made for the coast.'},
-            {name: 'The Cinnamon Coast', desc: 'Deep red and charcoal stripe. Hand-blocked with natural dyes. Worn open or buttoned.'},
-            {name: 'The Temple Wave', desc: 'Grey wave pattern on ivory cotton. Subtle. Refined. Built for warm evenings.'},
-            {name: 'The Ocean Road', desc: 'Sunlit multi-colour print on sand linen. Relaxed fit. Coconut buttons.'},
-          ].map((product, i) => (
-            <div key={i} style={{backgroundColor: '#f5f0e8'}}>
-              <div style={{width: '100%', height: '480px', backgroundImage: 'url(/collection.jpg)', backgroundSize: 'cover', backgroundPosition: `${i === 0 ? '12%' : i === 1 ? '38%' : i === 2 ? '62%' : '88%'} 60%`}}></div>
-              <div style={{padding: '28px 24px'}}>
-                <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>{product.name}</h3>
-                <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>{product.desc}</p>
-                <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
-                <a href="#contact" style={{display: 'block', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', textDecoration: 'none'}}>ENQUIRE TO ORDER</a>
-              </div>
+          <div style={{backgroundColor: '#f5f0e8'}}>
+            <div style={{width: '100%', height: '480px', backgroundImage: 'url(/collection.jpg)', backgroundSize: 'cover', backgroundPosition: '12% 60%'}}></div>
+            <div style={{padding: '28px 24px'}}>
+              <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>The Arugam</h3>
+              <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Black and white triangle block print. Woven from breathable cotton. Made for the coast.</p>
+              <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
+              <a href="#contact" style={{display: 'block', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', textDecoration: 'none'}}>ENQUIRE TO ORDER</a>
             </div>
-          ))}
+          </div>
+          <div style={{backgroundColor: '#f5f0e8'}}>
+            <div style={{width: '100%', height: '480px', backgroundImage: 'url(/collection.jpg)', backgroundSize: 'cover', backgroundPosition: '38% 60%'}}></div>
+            <div style={{padding: '28px 24px'}}>
+              <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>The Cinnamon Coast</h3>
+              <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Deep red and charcoal stripe. Hand-blocked with natural dyes. Worn open or buttoned.</p>
+              <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
+              <a href="#contact" style={{display: 'block', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', textDecoration: 'none'}}>ENQUIRE TO ORDER</a>
+            </div>
+          </div>
+          <div style={{backgroundColor: '#f5f0e8'}}>
+            <div style={{width: '100%', height: '480px', backgroundImage: 'url(/collection.jpg)', backgroundSize: 'cover', backgroundPosition: '62% 60%'}}></div>
+            <div style={{padding: '28px 24px'}}>
+              <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>The Temple Wave</h3>
+              <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Grey wave pattern on ivory cotton. Subtle. Refined. Built for warm evenings.</p>
+              <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
+              <a href="#contact" style={{display: 'block', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', textDecoration: 'none'}}>ENQUIRE TO ORDER</a>
+            </div>
+          </div>
+          <div style={{backgroundColor: '#f5f0e8'}}>
+            <div style={{width: '100%', height: '480px', backgroundImage: 'url(/collection.jpg)', backgroundSize: 'cover', backgroundPosition: '88% 60%'}}></div>
+            <div style={{padding: '28px 24px'}}>
+              <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>The Ocean Road</h3>
+              <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Sunlit multi-colour print on sand linen. Relaxed fit. Coconut buttons.</p>
+              <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
+              <a href="#contact" style={{display: 'block', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', textDecoration: 'none'}}>ENQUIRE TO ORDER</a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -68,12 +88,44 @@ export default function Home() {
           <h2 style={{fontSize: '48px', fontWeight: '300', color: '#2c2c2c'}}>Built Different.</h2>
         </div>
         <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '48px'}}>
-          {[
-            {title: 'Premium Natural Fabrics', body: 'Breathable cotton and linen. Sourced for quality, not cost.'},
-            {title: 'Small-Batch Production', body: 'Never mass produced. Every run is limited. Every piece intentional.'},
-            {title: 'Women-Led Craftsmanship', body: 'Made by skilled women artisans in Arugam Bay, Sri Lanka.'},
-            {title: 'Designed for Tropical Living', body: 'Resort-ready. Travel-proof. Built for people who move.'},
-          ].map((item, i) => (
-            <div key={i} style={{borderTop: '1px solid #d4cfc7', paddingTop: '32px'}}>
-              <h3 style={{fontSize: '20px', fontWeight: '300', color: '#2c2c2c', marginBottom: '12px'}}>{item.title}</h3>
-              <p style={{fontSize: '14px
+          <div style={{borderTop: '1px solid #d4cfc7', paddingTop: '32px'}}>
+            <h3 style={{fontSize: '20px', fontWeight: '300', color: '#2c2c2c', marginBottom: '12px'}}>Premium Natural Fabrics</h3>
+            <p style={{fontSize: '14px', color: '#888', lineHeight: '1.8'}}>Breathable cotton and linen. Sourced for quality, not cost.</p>
+          </div>
+          <div style={{borderTop: '1px solid #d4cfc7', paddingTop: '32px'}}>
+            <h3 style={{fontSize: '20px', fontWeight: '300', color: '#2c2c2c', marginBottom: '12px'}}>Small-Batch Production</h3>
+            <p style={{fontSize: '14px', color: '#888', lineHeight: '1.8'}}>Never mass produced. Every run is limited. Every piece intentional.</p>
+          </div>
+          <div style={{borderTop: '1px solid #d4cfc7', paddingTop: '32px'}}>
+            <h3 style={{fontSize: '20px', fontWeight: '300', color: '#2c2c2c', marginBottom: '12px'}}>Women-Led Craftsmanship</h3>
+            <p style={{fontSize: '14px', color: '#888', lineHeight: '1.8'}}>Made by skilled women artisans in Arugam Bay, Sri Lanka.</p>
+          </div>
+          <div style={{borderTop: '1px solid #d4cfc7', paddingTop: '32px'}}>
+            <h3 style={{fontSize: '20px', fontWeight: '300', color: '#2c2c2c', marginBottom: '12px'}}>Designed for Tropical Living</h3>
+            <p style={{fontSize: '14px', color: '#888', lineHeight: '1.8'}}>Resort-ready. Travel-proof. Built for people who move.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style={{padding: '120px 48px', backgroundColor: '#2c2c2c', textAlign: 'center'}}>
+        <p style={{fontSize: '11px', letterSpacing: '5px', color: '#b8960c', marginBottom: '24px'}}>OWN A PIECE OF SRI LANKA</p>
+        <h2 style={{fontSize: '56px', fontWeight: '300', color: '#f5f0e8', lineHeight: '1.2', marginBottom: '48px'}}>Ready to order?</h2>
+        <a href="#contact" style={{backgroundColor: '#b8960c', color: '#f5f0e8', padding: '18px 56px', fontSize: '11px', letterSpacing: '4px', textDecoration: 'none', display: 'inline-block'}}>SHOP COLLECTION</a>
+      </section>
+
+      <footer id="contact" style={{padding: '64px 48px', backgroundColor: '#1a1a1a', textAlign: 'center'}}>
+        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', marginBottom: '32px'}}>
+          <svg width="28" height="28" viewBox="0 0 40 38" fill="none">
+            <polygon points="20,1 39,37 1,37" stroke="#b8960c" strokeWidth="1.5" fill="none"/>
+            <polygon points="20,10 32,34 8,34" stroke="#b8960c" strokeWidth="1.3" fill="none"/>
+            <polygon points="20,19 25,31 15,31" stroke="#b8960c" strokeWidth="1.1" fill="none"/>
+          </svg>
+          <span style={{fontSize: '13px', letterSpacing: '6px', color: '#f5f0e8'}}>THRIWANA</span>
+        </div>
+        <p style={{fontSize: '13px', color: '#888', marginBottom: '8px', letterSpacing: '1px'}}>hello@thriwana.com</p>
+        <p style={{fontSize: '11px', color: '#555', letterSpacing: '2px', marginTop: '32px'}}>HANDCRAFTED IN SRI LANKA</p>
+      </footer>
+
+    </main>
+  );
+}
