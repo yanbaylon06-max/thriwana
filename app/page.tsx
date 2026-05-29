@@ -4,10 +4,10 @@ export default function Home() {
 
       <nav style={{position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, padding: '24px 48px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'rgba(245,240,232,0.95)'}}>
         <div style={{display: 'flex', alignItems: 'center', gap: '14px'}}>
-          <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
-            <polygon points="20,2 38,36 2,36" stroke="#b8960c" strokeWidth="1.5" fill="none"/>
-            <polygon points="20,9 33,34 7,34" stroke="#b8960c" strokeWidth="1.2" fill="none"/>
-            <polygon points="20,16 28,32 12,32" stroke="#b8960c" strokeWidth="1" fill="none"/>
+          <svg width="36" height="36" viewBox="0 0 40 38" fill="none">
+            <polygon points="20,1 39,37 1,37" stroke="#b8960c" strokeWidth="1.5" fill="none"/>
+            <polygon points="20,10 32,34 8,34" stroke="#b8960c" strokeWidth="1.3" fill="none"/>
+            <polygon points="20,19 25,31 15,31" stroke="#b8960c" strokeWidth="1.1" fill="none"/>
           </svg>
           <span style={{fontSize: '13px', letterSpacing: '6px', color: '#2c2c2c'}}>THRIWANA</span>
         </div>
@@ -76,31 +76,4 @@ export default function Home() {
           ].map((item, i) => (
             <div key={i} style={{borderTop: '1px solid #d4cfc7', paddingTop: '32px'}}>
               <h3 style={{fontSize: '20px', fontWeight: '300', color: '#2c2c2c', marginBottom: '12px'}}>{item.title}</h3>
-              <p style={{fontSize: '14px', color: '#888', lineHeight: '1.8'}}>{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section style={{padding: '120px 48px', backgroundColor: '#2c2c2c', textAlign: 'center'}}>
-        <p style={{fontSize: '11px', letterSpacing: '5px', color: '#b8960c', marginBottom: '24px'}}>OWN A PIECE OF SRI LANKA</p>
-        <h2 style={{fontSize: '56px', fontWeight: '300', color: '#f5f0e8', lineHeight: '1.2', marginBottom: '48px'}}>Ready to order?</h2>
-        <a href="#contact" style={{backgroundColor: '#b8960c', color: '#f5f0e8', padding: '18px 56px', fontSize: '11px', letterSpacing: '4px', textDecoration: 'none', display: 'inline-block'}}>SHOP COLLECTION</a>
-      </section>
-
-      <footer id="contact" style={{padding: '64px 48px', backgroundColor: '#1a1a1a', textAlign: 'center'}}>
-        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', marginBottom: '32px'}}>
-          <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
-            <polygon points="20,2 38,36 2,36" stroke="#b8960c" strokeWidth="1.5" fill="none"/>
-            <polygon points="20,9 33,34 7,34" stroke="#b8960c" strokeWidth="1.2" fill="none"/>
-            <polygon points="20,16 28,32 12,32" stroke="#b8960c" strokeWidth="1" fill="none"/>
-          </svg>
-          <span style={{fontSize: '13px', letterSpacing: '6px', color: '#f5f0e8'}}>THRIWANA</span>
-        </div>
-        <p style={{fontSize: '13px', color: '#888', marginBottom: '8px', letterSpacing: '1px'}}>hello@thriwana.com</p>
-        <p style={{fontSize: '11px', color: '#555', letterSpacing: '2px', marginTop: '32px'}}>HANDCRAFTED IN SRI LANKA</p>
-      </footer>
-
-    </main>
-  );
-}
+              <p style={{fontSize: '14px
