@@ -6,8 +6,8 @@ export default function Home() {
         <div style={{display: 'flex', alignItems: 'center', gap: '14px'}}>
           <svg width="36" height="36" viewBox="0 0 40 38" fill="none">
             <polygon points="20,1 39,37 1,37" stroke="#b8960c" strokeWidth="1.5" fill="none"/>
-            <polygon points="20,10 32,34 8,34" stroke="#b8960c" strokeWidth="1.3" fill="none"/>
-            <polygon points="20,19 25,31 15,31" stroke="#b8960c" strokeWidth="1.1" fill="none"/>
+            <polygon points="20,8 35,35 5,35" stroke="#b8960c" strokeWidth="1.3" fill="none"/>
+            <polygon points="20,15 31,33 9,33" stroke="#b8960c" strokeWidth="1.1" fill="none"/>
           </svg>
           <span style={{fontSize: '13px', letterSpacing: '6px', color: '#2c2c2c'}}>THRIWANA</span>
         </div>
@@ -117,8 +117,8 @@ export default function Home() {
         <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', marginBottom: '32px'}}>
           <svg width="28" height="28" viewBox="0 0 40 38" fill="none">
             <polygon points="20,1 39,37 1,37" stroke="#b8960c" strokeWidth="1.5" fill="none"/>
-            <polygon points="20,10 32,34 8,34" stroke="#b8960c" strokeWidth="1.3" fill="none"/>
-            <polygon points="20,19 25,31 15,31" stroke="#b8960c" strokeWidth="1.1" fill="none"/>
+            <polygon points="20,8 35,35 5,35" stroke="#b8960c" strokeWidth="1.3" fill="none"/>
+            <polygon points="20,15 31,33 9,33" stroke="#b8960c" strokeWidth="1.1" fill="none"/>
           </svg>
           <span style={{fontSize: '13px', letterSpacing: '6px', color: '#f5f0e8'}}>THRIWANA</span>
         </div>
