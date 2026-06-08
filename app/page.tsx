@@ -1,4 +1,16 @@
+'use client';
+import { useState } from 'react';
+
 export default function Home() {
+  const [loading, setLoading] = useState(false);
+
+  const handleCheckout = async () => {
+    setLoading(true);
+    const res = await fetch('/api/checkout', { method: 'POST' });
+    const data = await res.json();
+    window.location.href = data.url;
+  };
+
   return (
     <main style={{fontFamily: 'Cormorant Garamond, serif', backgroundColor: '#f5f0e8', color: '#2c2c2c'}}>
 
@@ -49,7 +61,7 @@ export default function Home() {
               <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>The Arugam</h3>
               <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Black and white triangle block print. Woven from breathable cotton. Made for the coast.</p>
               <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
-              <a href="#contact" style={{display: 'block', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', textDecoration: 'none'}}>ENQUIRE TO ORDER</a>
+              <button onClick={handleCheckout} disabled={loading} style={{display: 'block', width: '100%', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: 'transparent', cursor: 'pointer'}}>{loading ? 'LOADING...' : 'BUY NOW'}</button>
             </div>
           </div>
           <div style={{backgroundColor: '#f5f0e8'}}>
@@ -58,7 +70,7 @@ export default function Home() {
               <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>The Cinnamon Coast</h3>
               <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Deep red and charcoal stripe. Hand-blocked with natural dyes. Worn open or buttoned.</p>
               <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
-              <a href="#contact" style={{display: 'block', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', textDecoration: 'none'}}>ENQUIRE TO ORDER</a>
+              <button onClick={handleCheckout} disabled={loading} style={{display: 'block', width: '100%', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: 'transparent', cursor: 'pointer'}}>{loading ? 'LOADING...' : 'BUY NOW'}</button>
             </div>
           </div>
           <div style={{backgroundColor: '#f5f0e8'}}>
@@ -67,7 +79,7 @@ export default function Home() {
               <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>The Temple Wave</h3>
               <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Grey wave pattern on ivory cotton. Subtle. Refined. Built for warm evenings.</p>
               <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
-              <a href="#contact" style={{display: 'block', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', textDecoration: 'none'}}>ENQUIRE TO ORDER</a>
+              <button onClick={handleCheckout} disabled={loading} style={{display: 'block', width: '100%', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: 'transparent', cursor: 'pointer'}}>{loading ? 'LOADING...' : 'BUY NOW'}</button>
             </div>
           </div>
           <div style={{backgroundColor: '#f5f0e8'}}>
@@ -76,7 +88,7 @@ export default function Home() {
               <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>The Ocean Road</h3>
               <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Sunlit multi-colour print on sand linen. Relaxed fit. Coconut buttons.</p>
               <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
-              <a href="#contact" style={{display: 'block', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', textDecoration: 'none'}}>ENQUIRE TO ORDER</a>
+              <button onClick={handleCheckout} disabled={loading} style={{display: 'block', width: '100%', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: 'transparent', cursor: 'pointer'}}>{loading ? 'LOADING...' : 'BUY NOW'}</button>
             </div>
           </div>
         </div>
@@ -96,36 +108,3 @@ export default function Home() {
             <h3 style={{fontSize: '20px', fontWeight: '300', color: '#2c2c2c', marginBottom: '12px'}}>Small-Batch Production</h3>
             <p style={{fontSize: '14px', color: '#888', lineHeight: '1.8'}}>Never mass produced. Every run is limited. Every piece intentional.</p>
           </div>
-          <div style={{borderTop: '1px solid #d4cfc7', paddingTop: '32px'}}>
-            <h3 style={{fontSize: '20px', fontWeight: '300', color: '#2c2c2c', marginBottom: '12px'}}>Women-Led Craftsmanship</h3>
-            <p style={{fontSize: '14px', color: '#888', lineHeight: '1.8'}}>Made by skilled women artisans in Arugam Bay, Sri Lanka.</p>
-          </div>
-          <div style={{borderTop: '1px solid #d4cfc7', paddingTop: '32px'}}>
-            <h3 style={{fontSize: '20px', fontWeight: '300', color: '#2c2c2c', marginBottom: '12px'}}>Designed for Tropical Living</h3>
-            <p style={{fontSize: '14px', color: '#888', lineHeight: '1.8'}}>Resort-ready. Travel-proof. Built for people who move.</p>
-          </div>
-        </div>
-      </section>
-
-      <section style={{padding: '120px 48px', backgroundColor: '#2c2c2c', textAlign: 'center'}}>
-        <p style={{fontSize: '11px', letterSpacing: '5px', color: '#b8960c', marginBottom: '24px'}}>OWN A PIECE OF SRI LANKA</p>
-        <h2 style={{fontSize: '56px', fontWeight: '300', color: '#f5f0e8', lineHeight: '1.2', marginBottom: '48px'}}>Ready to order?</h2>
-        <a href="#contact" style={{backgroundColor: '#b8960c', color: '#f5f0e8', padding: '18px 56px', fontSize: '11px', letterSpacing: '4px', textDecoration: 'none', display: 'inline-block'}}>SHOP COLLECTION</a>
-      </section>
-
-      <footer id="contact" style={{padding: '64px 48px', backgroundColor: '#1a1a1a', textAlign: 'center'}}>
-        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', marginBottom: '32px'}}>
-          <svg width="28" height="28" viewBox="0 0 40 38" fill="none">
-            <polygon points="20,1 39,37 1,37" stroke="#b8960c" strokeWidth="1.5" fill="none"/>
-            <polygon points="20,8 35,35 5,35" stroke="#b8960c" strokeWidth="1.3" fill="none"/>
-            <polygon points="20,15 31,33 9,33" stroke="#b8960c" strokeWidth="1.1" fill="none"/>
-          </svg>
-          <span style={{fontSize: '13px', letterSpacing: '6px', color: '#f5f0e8'}}>THRIWANA</span>
-        </div>
-        <p style={{fontSize: '13px', color: '#888', marginBottom: '8px', letterSpacing: '1px'}}>hello@thriwana.com</p>
-        <p style={{fontSize: '11px', color: '#555', letterSpacing: '2px', marginTop: '32px'}}>HANDCRAFTED IN SRI LANKA</p>
-      </footer>
-
-    </main>
-  );
-}
