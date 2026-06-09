@@ -108,3 +108,36 @@ export default function Home() {
             <h3 style={{fontSize: '20px', fontWeight: '300', color: '#2c2c2c', marginBottom: '12px'}}>Small-Batch Production</h3>
             <p style={{fontSize: '14px', color: '#888', lineHeight: '1.8'}}>Never mass produced. Every run is limited. Every piece intentional.</p>
           </div>
+          <div style={{borderTop: '1px solid #d4cfc7', paddingTop: '32px'}}>
+            <h3 style={{fontSize: '20px', fontWeight: '300', color: '#2c2c2c', marginBottom: '12px'}}>Made By Women Artisans</h3>
+            <p style={{fontSize: '14px', color: '#888', lineHeight: '1.8'}}>Skilled hands in Arugam Bay. Fair work, honoured craft.</p>
+          </div>
+          <div style={{borderTop: '1px solid #d4cfc7', paddingTop: '32px'}}>
+            <h3 style={{fontSize: '20px', fontWeight: '300', color: '#2c2c2c', marginBottom: '12px'}}>Shipped Worldwide</h3>
+            <p style={{fontSize: '14px', color: '#888', lineHeight: '1.8'}}>From the Sri Lankan coast to your door, wherever that is.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" style={{padding: '120px 48px', backgroundColor: '#2c2c2c', textAlign: 'center'}}>
+        <p style={{fontSize: '11px', letterSpacing: '5px', color: '#b8960c', marginBottom: '24px'}}>CONTACT</p>
+        <h2 style={{fontSize: '48px', fontWeight: '300', color: '#f5f0e8', lineHeight: '1.2', marginBottom: '32px'}}>Bring Thriwana To You.</h2>
+        <p style={{fontSize: '16px', color: '#d4cfc7', lineHeight: '2', maxWidth: '600px', margin: '0 auto 32px'}}>For orders, wholesale enquiries, or to learn more about our craft, reach out anytime.</p>
+        <a href="mailto:yanbaylon06@gmail.com" style={{fontSize: '14px', letterSpacing: '3px', color: '#b8960c', textDecoration: 'none'}}>YANBAYLON06@GMAIL.COM</a>
+      </section>
+
+      <footer style={{padding: '48px', backgroundColor: '#2c2c2c', borderTop: '1px solid #444', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+        <div style={{display: 'flex', alignItems: 'center', gap: '14px'}}>
+          <svg width="28" height="28" viewBox="0 0 40 38" fill="none">
+            <polygon points="20,1 39,37 1,37" stroke="#b8960c" strokeWidth="1.5" fill="none"/>
+            <polygon points="20,8 35,35 5,35" stroke="#b8960c" strokeWidth="1.3" fill="none"/>
+            <polygon points="20,15 31,33 9,33" stroke="#b8960c" strokeWidth="1.1" fill="none"/>
+          </svg>
+          <span style={{fontSize: '12px', letterSpacing: '5px', color: '#888'}}>THRIWANA</span>
+        </div>
+        <p style={{fontSize: '11px', letterSpacing: '2px', color: '#666'}}>HANDCRAFTED IN SRI LANKA</p>
+      </footer>
+
+    </main>
+  );
+}
