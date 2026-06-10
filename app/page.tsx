@@ -14,6 +14,31 @@ const PRICES = {
 
 export default function Home() {
   const [loadingId, setLoadingId] = useState<string | null>(null);
+  const [email, setEmail] = useState('');
+  const [signupState, setSignupState] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
+
+  const handleSignup = async () => {
+    if (!email || !email.includes('@')) {
+      setSignupState('error');
+      return;
+    }
+    setSignupState('sending');
+    try {
+      const res = await fetch('https://formspree.io/f/xjgdownb', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) {
+        setSignupState('done');
+        setEmail('');
+      } else {
+        setSignupState('error');
+      }
+    } catch {
+      setSignupState('error');
+    }
+  };
 
   const handleCheckout = async (priceId: string) => {
     setLoadingId(priceId);
@@ -126,6 +151,28 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section style={{padding: '120px 48px', backgroundColor: '#2c2c2c', textAlign: 'center'}}>
+        <p style={{fontSize: '11px', letterSpacing: '5px', color: '#b8960c', marginBottom: '24px'}}>THE LIST</p>
+        <h2 style={{fontSize: '44px', fontWeight: '300', color: '#f5f0e8', lineHeight: '1.2', marginBottom: '24px', maxWidth: '620px', marginLeft: 'auto', marginRight: 'auto'}}>Be first when the new season lands.</h2>
+        <p style={{fontSize: '16px', color: '#d4cfc7', lineHeight: '2', maxWidth: '520px', margin: '0 auto 40px'}}>Small batches sell through fast. Join the list for early access to each new release before it reaches the public.</p>
+        <div style={{display: 'flex', gap: '12px', maxWidth: '460px', margin: '0 auto', flexWrap: 'wrap', justifyContent: 'center'}}>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => { setEmail(e.target.value); if (signupState === 'error') setSignupState('idle'); }}
+            placeholder="your email"
+            style={{flex: '1 1 240px', minWidth: '0', padding: '15px 18px', fontSize: '14px', fontFamily: 'Cormorant Garamond, serif', color: '#2c2c2c', backgroundColor: '#f5f0e8', border: 'none', outline: 'none'}}
+          />
+          <button onClick={handleSignup} disabled={signupState === 'sending'} style={{flex: '0 0 auto', padding: '15px 36px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: '#b8960c', border: 'none', cursor: 'pointer'}}>{signupState === 'sending' ? 'JOINING...' : 'JOIN THE LIST'}</button>
+        </div>
+        {signupState === 'done' && (
+          <p style={{fontSize: '14px', color: '#b8960c', marginTop: '24px', fontStyle: 'italic'}}>You&apos;re on the list. We&apos;ll be in touch.</p>
+        )}
+        {signupState === 'error' && (
+          <p style={{fontSize: '14px', color: '#d4cfc7', marginTop: '24px', fontStyle: 'italic'}}>Please enter a valid email and try again.</p>
+        )}
       </section>
 
       <section style={{padding: '120px 48px', maxWidth: '900px', margin: '0 auto'}}>
