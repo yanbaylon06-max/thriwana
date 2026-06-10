@@ -1,14 +1,39 @@
 'use client';
 import { useState } from 'react';
 
-export default function Home() {
-  const [loading, setLoading] = useState(false);
+// === SHIRT PRICE IDs ===
+// Replace each placeholder below with the real Stripe Price ID for that shirt.
+// You get these from Stripe Dashboard > Products > (your product) > copy the Price ID (starts with "price_").
+const PRICES = {
+  arugam: 'price_1Tgd05HZMPMitDH8WjG54ZIi',
+  cinnamon: 'price_1Tgd3GHZMPMitDH8HS9nGjDd',
+  temple: 'price_1Tgd5bHZMPMitDH85cuBjegA',
+  ocean: 'price_1Tgd7DHZMPMitDH8CpeklIMu',
+  fifth: 'price_1Tgd9SHZMPMitDH8AvnJddCy',
+};
 
-  const handleCheckout = async () => {
-    setLoading(true);
-    const res = await fetch('/api/checkout', { method: 'POST' });
-    const data = await res.json();
-    window.location.href = data.url;
+export default function Home() {
+  const [loadingId, setLoadingId] = useState<string | null>(null);
+
+  const handleCheckout = async (priceId: string) => {
+    setLoadingId(priceId);
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priceId }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert('Sorry, something went wrong starting checkout. Please try again.');
+        setLoadingId(null);
+      }
+    } catch {
+      alert('Sorry, something went wrong starting checkout. Please try again.');
+      setLoadingId(null);
+    }
   };
 
   return (
@@ -59,36 +84,45 @@ export default function Home() {
             <div style={{width: '100%', height: '480px', backgroundImage: 'url(/collection.jpg)', backgroundSize: 'cover', backgroundPosition: '12% 60%'}}></div>
             <div style={{padding: '28px 24px'}}>
               <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>The Arugam</h3>
-              <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Black and white triangle block print. Woven from breathable cotton. Made for the coast.</p>
+              <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>The first light at Arugam Bay comes in low and gold, and this shirt was made for it. Hand-blocked triangles on breathable woven cotton, cut loose for heat and salt air. Coconut buttons, unlined, made to move. Wear it like you have already got sand on your feet.</p>
               <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
-              <button onClick={handleCheckout} disabled={loading} style={{display: 'block', width: '100%', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: 'transparent', cursor: 'pointer'}}>{loading ? 'LOADING...' : 'BUY NOW'}</button>
+              <button onClick={() => handleCheckout(PRICES.arugam)} disabled={loadingId !== null} style={{display: 'block', width: '100%', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: 'transparent', cursor: 'pointer'}}>{loadingId === PRICES.arugam ? 'LOADING...' : 'BUY NOW'}</button>
             </div>
           </div>
           <div style={{backgroundColor: '#f5f0e8'}}>
             <div style={{width: '100%', height: '480px', backgroundImage: 'url(/collection.jpg)', backgroundSize: 'cover', backgroundPosition: '38% 60%'}}></div>
             <div style={{padding: '28px 24px'}}>
               <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>The Cinnamon Coast</h3>
-              <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Deep red and charcoal stripe. Hand-blocked with natural dyes. Worn open or buttoned.</p>
+              <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Named for the spice routes that built the island south. Deep red and charcoal stripes, hand-blocked with natural dyes that soften with every wash. Open or buttoned, it holds its shape from market morning to late dinner. Some shirts you buy; this one you arrive in.</p>
               <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
-              <button onClick={handleCheckout} disabled={loading} style={{display: 'block', width: '100%', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: 'transparent', cursor: 'pointer'}}>{loading ? 'LOADING...' : 'BUY NOW'}</button>
+              <button onClick={() => handleCheckout(PRICES.cinnamon)} disabled={loadingId !== null} style={{display: 'block', width: '100%', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: 'transparent', cursor: 'pointer'}}>{loadingId === PRICES.cinnamon ? 'LOADING...' : 'BUY NOW'}</button>
             </div>
           </div>
           <div style={{backgroundColor: '#f5f0e8'}}>
             <div style={{width: '100%', height: '480px', backgroundImage: 'url(/collection.jpg)', backgroundSize: 'cover', backgroundPosition: '62% 60%'}}></div>
             <div style={{padding: '28px 24px'}}>
               <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>The Temple Wave</h3>
-              <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Grey wave pattern on ivory cotton. Subtle. Refined. Built for warm evenings.</p>
+              <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>There is a quiet to the inland temples that this print carries with it. A subtle grey wave pattern on ivory cotton, refined enough for evening, easy enough for everything before it. Lightweight, breathable, built for warm nights that run long. Understatement, worn well.</p>
               <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
-              <button onClick={handleCheckout} disabled={loading} style={{display: 'block', width: '100%', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: 'transparent', cursor: 'pointer'}}>{loading ? 'LOADING...' : 'BUY NOW'}</button>
+              <button onClick={() => handleCheckout(PRICES.temple)} disabled={loadingId !== null} style={{display: 'block', width: '100%', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: 'transparent', cursor: 'pointer'}}>{loadingId === PRICES.temple ? 'LOADING...' : 'BUY NOW'}</button>
             </div>
           </div>
           <div style={{backgroundColor: '#f5f0e8'}}>
             <div style={{width: '100%', height: '480px', backgroundImage: 'url(/collection.jpg)', backgroundSize: 'cover', backgroundPosition: '88% 60%'}}></div>
             <div style={{padding: '28px 24px'}}>
               <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>The Ocean Road</h3>
-              <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Sunlit multi-colour print on sand linen. Relaxed fit. Coconut buttons.</p>
+              <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>The coast road south is all sun, dust, and colour, and so is this. A multi-colour print on sand-toned linen, relaxed through the body, finished with coconut buttons. The kind of shirt that looks better the longer the day goes. For the road, and whoever you meet on it.</p>
               <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
-              <button onClick={handleCheckout} disabled={loading} style={{display: 'block', width: '100%', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: 'transparent', cursor: 'pointer'}}>{loading ? 'LOADING...' : 'BUY NOW'}</button>
+              <button onClick={() => handleCheckout(PRICES.ocean)} disabled={loadingId !== null} style={{display: 'block', width: '100%', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: 'transparent', cursor: 'pointer'}}>{loadingId === PRICES.ocean ? 'LOADING...' : 'BUY NOW'}</button>
+            </div>
+          </div>
+          <div style={{backgroundColor: '#f5f0e8'}}>
+            <div style={{width: '100%', height: '480px', backgroundImage: 'url(/collection.jpg)', backgroundSize: 'cover', backgroundPosition: '50% 60%'}}></div>
+            <div style={{padding: '28px 24px'}}>
+              <h3 style={{fontSize: '24px', fontWeight: '300', color: '#2c2c2c', marginBottom: '8px'}}>The Fifth Shirt</h3>
+              <p style={{fontSize: '13px', color: '#888', lineHeight: '1.7', marginBottom: '16px'}}>Placeholder description. Replace this name, text, and image once you confirm the fifth shirt with your partner.</p>
+              <p style={{fontSize: '20px', color: '#b8960c', marginBottom: '20px', fontStyle: 'italic'}}>EUR 95</p>
+              <button onClick={() => handleCheckout(PRICES.fifth)} disabled={loadingId !== null} style={{display: 'block', width: '100%', textAlign: 'center', border: '1px solid #2c2c2c', padding: '14px', fontSize: '11px', letterSpacing: '3px', color: '#2c2c2c', backgroundColor: 'transparent', cursor: 'pointer'}}>{loadingId === PRICES.fifth ? 'LOADING...' : 'BUY NOW'}</button>
             </div>
           </div>
         </div>
