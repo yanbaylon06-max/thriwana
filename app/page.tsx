@@ -202,7 +202,7 @@ export default function Home() {
         <p style={{fontSize: '11px', letterSpacing: '5px', color: '#b8960c', marginBottom: '24px'}}>CONTACT</p>
         <h2 style={{fontSize: '48px', fontWeight: '300', color: '#f5f0e8', lineHeight: '1.2', marginBottom: '32px'}}>Bring Thriwana To You.</h2>
         <p style={{fontSize: '16px', color: '#d4cfc7', lineHeight: '2', maxWidth: '600px', margin: '0 auto 32px'}}>For orders, wholesale enquiries, or to learn more about our craft, reach out anytime.</p>
-        <a href="mailto:yanbaylon06@gmail.com" style={{fontSize: '14px', letterSpacing: '3px', color: '#b8960c', textDecoration: 'none'}}>YANBAYLON06@GMAIL.COM</a>
+        <a href="mailto:hello@thriwana.com" style={{fontSize: '14px', letterSpacing: '3px', color: '#b8960c', textDecoration: 'none'}}>HELLO@THRIWANA.COM</a>
       </section>
 
       <footer style={{padding: '48px', backgroundColor: '#2c2c2c', borderTop: '1px solid #444', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
