@@ -2,8 +2,6 @@
 import { useState } from 'react';
 
 // === SHIRT PRICE IDs ===
-// Replace each placeholder below with the real Stripe Price ID for that shirt.
-// You get these from Stripe Dashboard > Products > (your product) > copy the Price ID (starts with "price_").
 const PRICES = {
   arugam: 'price_1Tgd05HZMPMitDH8WjG54ZIi',
   cinnamon: 'price_1Tgd3GHZMPMitDH8HS9nGjDd',
@@ -65,14 +63,14 @@ export default function Home() {
     <main style={{fontFamily: 'Cormorant Garamond, serif', backgroundColor: '#f5f0e8', color: '#2c2c2c'}}>
 
       <nav style={{position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, padding: '24px 48px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'rgba(245,240,232,0.95)'}}>
-        <div style={{display: 'flex', alignItems: 'center', gap: '14px'}}>
+        <a href="#top" style={{display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none', cursor: 'pointer'}}>
           <svg width="36" height="36" viewBox="0 0 40 38" fill="none">
             <polygon points="20,1 39,37 1,37" stroke="#b8960c" strokeWidth="1.5" fill="none"/>
             <polygon points="20,8 35,35 5,35" stroke="#b8960c" strokeWidth="1.3" fill="none"/>
             <polygon points="20,15 31,33 9,33" stroke="#b8960c" strokeWidth="1.1" fill="none"/>
           </svg>
           <span style={{fontSize: '13px', letterSpacing: '6px', color: '#2c2c2c'}}>THRIWANA</span>
-        </div>
+        </a>
         <div style={{display: 'flex', gap: '40px'}}>
           <a href="#collection" style={{fontSize: '11px', letterSpacing: '3px', color: '#888', textDecoration: 'none'}}>COLLECTION</a>
           <a href="#story" style={{fontSize: '11px', letterSpacing: '3px', color: '#888', textDecoration: 'none'}}>STORY</a>
@@ -80,7 +78,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <section style={{height: '100vh', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', paddingTop: '80px'}}>
+      <section id="top" style={{height: '100vh', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', paddingTop: '80px'}}>
         <div style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'url(/collection.jpg)', backgroundSize: 'cover', backgroundPosition: 'center top', filter: 'brightness(0.55)'}}></div>
         <div style={{position: 'relative', zIndex: 2, maxWidth: '700px', padding: '0 24px'}}>
           <p style={{fontSize: '11px', letterSpacing: '5px', color: '#b8960c', marginBottom: '24px'}}>ARUGAM BAY, SRI LANKA</p>
